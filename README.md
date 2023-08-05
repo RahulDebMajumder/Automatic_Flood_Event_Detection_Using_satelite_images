@@ -18,6 +18,20 @@ For transfer learning, we utilized the IMAGENET dataset for model training. Sinc
 
 During model testing, we noticed that many cloudy images were misclassified as flooded images. To distinguish between clouds and floods, we researched various methods and found that ISRO (Indian Space Research Organisation) used the SWIR band for cloud detection in their 2019 research paper "DEEP CONVOLUTIONAL NETWORKS FOR CLOUD DETECTION USING RESOURCESAT-2 DATA."
 
+![Image1](Images/Org_Images.png)
+
+*Original Image with cloud and water (river)*
+
+![Image2](Images/NDWI_Images.png)
+
+*Image after applying NDWI Index => Water and clouds are misclassified*
+
+![Image3](Images/NEW_INDEX_Images.png)
+
+*Image after applying New Index (Combination of Blue, Green, NIR, SWIR) => Water and clouds are properly classified*
+
+After getting this result we feed the new combination of Bands into Our new CNN Model
+
 ## Enhanced Model Architecture
 
 To leverage the information from all four bands (BLUE, GREEN, NIR, and SWIR), we faced a challenge due to most transfer learning models being trained on RGB images (3 channels). To address this, we devised a new approach for transfer learning:
@@ -26,18 +40,6 @@ To leverage the information from all four bands (BLUE, GREEN, NIR, and SWIR), we
 2. Repeat the process with the last channel (SWIR), converting it into a 3-channel image by replicating the same channel three times.
 3. Concatenate both results from the previous steps.
 4. Apply four dense layers with 0.5 dropout to produce the final prediction.
-
-![Image1](Images/Org_Images.png)
-
-*Original Image with cloud and water (river)*
-
-![Image2](Images/NDWI_Images.png)
-
-*Image after applying NDWI Index (Water and clouds are misclassified)*
-
-![Image2](Images/NDWI_Images.png)
-
-*Image after applying NDWI Index (Water and clouds are misclassified)*
 
 ## Impressive Results
 
