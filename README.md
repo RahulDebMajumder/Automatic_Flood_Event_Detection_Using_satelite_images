@@ -27,6 +27,18 @@ To leverage the information from all four bands (BLUE, GREEN, NIR, and SWIR), we
 3. Concatenate both results from the previous steps.
 4. Apply four dense layers with 0.5 dropout to produce the final prediction.
 
+![Image1](Images/Org_Images.png)
+
+*Original Image with cloud and water (river)*
+
+![Image2](Images/NDWI_Images.png)
+
+*Image after applying NDWI Index (Water and clouds are misclassified)*
+
+![Image2](Images/NDWI_Images.png)
+
+*Image after applying NDWI Index (Water and clouds are misclassified)*
+
 ## Impressive Results
 
 Through our innovative approach, we achieved an impressive accuracy of 97% in flood event detection. This accuracy demonstrates the potential of our model for real-world flood monitoring applications.
