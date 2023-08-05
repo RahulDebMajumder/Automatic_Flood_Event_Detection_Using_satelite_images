@@ -2,13 +2,13 @@
 
 ## Project Overview
 
-In this project, we aim to automatically detect flood events using satellite images. To achieve this, we conducted a comprehensive study of various water detection indices. Ultimately, we selected the BLUE, Green, and NIR bands for flood detection.
+This project aims to detect flood events using satellite images automatically. To achieve this, we conducted a comprehensive study of various water detection indices. Ultimately, we selected the BLUE, Green, and NIR bands for flood detection.
 
-The choice of Sentinel-2 satellite data was driven by its frequent revisit times, availability of most optical bands, and its popularity, which provided easy access to a suitable dataset for model training.
+The choice of Sentinel-2 satellite data was driven by its frequent revisit times, availability of most optical bands, and popularity, providing easy access to a suitable dataset for model training.
 
 ## Model Selection
 
-After careful consideration, we opted for the ResNet model due to its top performance in the ILSVRC2015 challenge. However, during model training, we encountered slow training speeds due to the addition of a dropout layer and ResNet's inherent batch normalization inside its CNN layers. To overcome this, we decided to employ transfer learning for our model training.
+After careful consideration, we opted for the ResNet model due to its top performance in the ILSVRC 2015 challenge. However, during model training, we encountered slow training speeds due to the addition of a dropout layer and ResNet's inherent batch normalization inside its CNN layers. To overcome this, we decided to employ transfer learning for our model training.
 
 ## Transfer Learning Approach
 
@@ -16,7 +16,7 @@ For transfer learning, we utilized the IMAGENET dataset for model training. Sinc
 
 ## Addressing Cloud Misclassification
 
-During model testing, we noticed that many cloudy images were misclassified as flooded images. To distinguish between clouds and floods, we researched various methods and found that ISRO (Indian Space Research Organisation) used the SWIR band for cloud detection in their 2019 research paper "DEEP CONVOLUTIONAL NETWORKS FOR CLOUD DETECTION USING RESOURCESAT-2 DATA."
+During model testing, we noticed that many cloudy images were misclassified as flooded images. To distinguish between clouds and floods, we researched various methods and found that ISRO (Indian Space Research Organization) used the SWIR band for cloud detection in their 2019 research paper "DEEP CONVOLUTIONAL NETWORKS FOR CLOUD DETECTION USING RESOURCESAT-2 DATA."
 
 ![Image1](Images/Org_Images.png)
 
@@ -44,3 +44,7 @@ To leverage the information from all four bands (BLUE, GREEN, NIR, and SWIR), we
 ## Impressive Results
 
 Through our innovative approach, we achieved an impressive accuracy of 97% in flood event detection. This accuracy demonstrates the potential of our model for real-world flood monitoring applications.
+
+![Image3](Images/resnet152_tl_resnet152(97).png)
+
+*Final Result Displayed Using Confusion Matrix*
