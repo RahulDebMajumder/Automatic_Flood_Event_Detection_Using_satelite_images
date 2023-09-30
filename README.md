@@ -43,7 +43,7 @@ To leverage the information from all four bands (BLUE, GREEN, NIR, and SWIR), we
 
 ## Impressive Results
 
-Through our innovative approach, we achieved an impressive accuracy of 97% in flood event detection. This accuracy demonstrates the potential of our model for real-world flood monitoring applications.
+Through our innovative approach, we achieved an impressive accuracy of 98.2% in flood event detection. This accuracy demonstrates the potential of our model for real-world flood monitoring applications.
 
 ![Image3](Images/resnet152_tl_resnet152(97).png)
 
